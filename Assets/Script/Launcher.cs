@@ -23,7 +23,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings(); // подключение к мастер серверу (берет все настройки и подключается для матчмейкинга)
         PhotonNetwork.NickName = "Player" + Random.Range(1000, 9999); // рандомные ники играков 
-        PhotonNetwork.GameVersion = "1"; // задание версии игры 
+        PhotonNetwork.GameVersion = "1"; // версии игры 
         PhotonNetwork.AutomaticallySyncScene = true; // переключение сцены автоматически на всех клиентах
         Log("Player's name is set to " + PhotonNetwork.NickName);  // вывод сообщения 
     }
@@ -47,18 +47,20 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(createRoomTF.text, new Photon.Realtime.RoomOptions { MaxPlayers = 3 });
         Log($"Created the room {createRoomTF.text} ");
     }
-     public void EnterInGame()
-    {
-        PhotonNetwork.LoadLevel(1);
-    }
     public void JoinRoom()
     {
         PhotonNetwork.JoinRoom(joinRoomTF.text, null); // подключение к комнате  createRoomTF
-       
     }
+    public void EnterInGame()
+    {
+        //PhotonNetwork.LoadLevel(1);
+    }
+  
+       
     public override void OnJoinedRoom() // вызовет сам Photon когда мы подключимся к комнате 
     {
         Log($"Joined the room... ");
+        PhotonNetwork.LoadLevel(1);
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
