@@ -7,16 +7,22 @@ using Photon.Realtime;
 
 public class ManagerScene : MonoBehaviourPunCallbacks
 {
-
+    [SerializeField] public GameObject PlayerPrefab;
+    private void Start()
+    {
+        Vector3 pos = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        PhotonNetwork.Instantiate(PlayerPrefab.name, pos, Quaternion.identity);
+    }
     public void Leave()
     {
         PhotonNetwork.LeaveRoom();
     }
     public override void OnLeftRoom()
     {
-        base.OnLeftRoom();
+        //  огда текущий игрок покидает комнату
         SceneManager.LoadScene(0);
     }
+   
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.LogFormat("Player {0} entered room ", newPlayer.NickName);

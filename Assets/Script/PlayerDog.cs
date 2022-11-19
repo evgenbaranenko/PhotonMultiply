@@ -52,6 +52,8 @@ public class PlayerDog : MonoBehaviour, IPunObservable
     }
     public void MovePlayerInAxe_x()
     {
+        if (!photonView.IsMine) return;
+
         Vector2 velocity = playerRigidbody.velocity;
 
         velocity.x = Input.GetAxis("Horizontal") * (float)moveSpeed; /*Debug.Log(velocity.x);*/
@@ -62,6 +64,8 @@ public class PlayerDog : MonoBehaviour, IPunObservable
     }
     public void ReverseMovePlayerInAxe_x()
     {
+        if (!photonView.IsMine) return;
+
         if (transform.localScale.x < 0)
         {
             if (Input.GetAxis("Horizontal") < 0)

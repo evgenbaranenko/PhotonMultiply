@@ -39,10 +39,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5838481143806626862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe662bd1332e85a46a32c8790a9ba30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3235285600696569024, guid: 7d97c07fdf45ec74c87ba8441f26dc7a, type: 3}
-  mainCameraObj: {fileID: 5838481143806626862}
