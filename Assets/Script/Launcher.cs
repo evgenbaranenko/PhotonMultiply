@@ -49,14 +49,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(joinRoomTF.text, null); // подключение к комнате  createRoomTF
+        PhotonNetwork.JoinRandomRoom(); // подключение к комнате  createRoomTF
     }
-    public void EnterInGame()
-    {
-        //PhotonNetwork.LoadLevel(1);
-    }
-  
-       
+ 
     public override void OnJoinedRoom() // вызовет сам Photon когда мы подключимся к комнате 
     {
         Log($"Joined the room... ");

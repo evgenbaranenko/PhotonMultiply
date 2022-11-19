@@ -7,20 +7,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    public static GameManager Instance 
-    { 
-        get 
+    public static GameManager Instance
+    {
+        get
         {
             //if (_instance == null)
             //{
             //    GameObject gameManager = Instantiate(Resources.Load("/Prefabs")) as GameObject;
             //    _instance = gameManager.GetComponent<GameManager>();
             //}
-            return _instance; } 
-        set { _instance = value; } }
-    [SerializeField] private GameObject playerPrefab;
-   // [SerializeField] private GameObject mainCameraObj;
-   // public GameObject MainCameraObj { get { return mainCameraObj; } set { mainCameraObj = value; } }
+            return _instance;
+        }
+        set { _instance = value; }
+    }
+
+   // [SerializeField] private GameObject playerPrefab;
+
+    // [SerializeField] private GameObject mainCameraObj;
+    // public GameObject MainCameraObj { get { return mainCameraObj; } set { mainCameraObj = value; } }
     //[SerializeField] private TMPro.TMP_Text info;
     //[SerializeField] private GameObject ghostPrefab;
 
